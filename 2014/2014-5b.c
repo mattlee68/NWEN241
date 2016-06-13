@@ -23,7 +23,7 @@ void writelisttofile(Node *node){
     }
 }
 
-void readlisttofile(Node *node){
+void readlistfromfile(Node *node){
     FILE *fp = fopen("list.dat", "r");
     Node n;
 
