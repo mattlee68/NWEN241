@@ -23,14 +23,14 @@ void writelisttofile(Node *node){
     }
 }
 
-void readlistfromfile(Node *node){
+void readlistfromfile(void)){
     FILE *fp = fopen("list.dat", "r");
     Node n;
 
     while(!feof(fp)){
         fread(&node, Node_Size, 1, fp);
         if(!feof(fp)){
-            fprintf(fp, "%c\t%h\n", n.data, n.next);
+            printf("%c\t%h\n", n.data, n.next);
         }
     }
     fclose(fp);
