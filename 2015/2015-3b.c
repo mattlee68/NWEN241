@@ -44,21 +44,28 @@ ptrToBePacked charList(char *str){
     return head;
 }
 
-
 ptrPacked packCharacters(ptrToBePacked p){
-    //shit this is bad code
-    int val = 0;
-    val |= (p->data);
-    val |= (p->next->data) << 1;
-    val |= (p->next->next->data) << 2;
-    val |= (p->next->next->next->data) << 3;
+    //not sure if this is correct but lets try it
     ptrPacked head = malloc(int_node_size);
-    head->data = val;
+    head->data = 0;
     head->next = NULL;
-    free(p->next->next->next);
-    free(p->next->next);
-    free(p->next);
-    free(p);
+    ptrPacked prev = head;
+    int count = 0;
+    while(p != NULL){
+        ptrToBePacked tmp = p;
+        prev->data |= ((p->data) << count);
+        p = p->next;
+        free(tmp);
+        count++;
+        if(count == 4){
+            ptrPacked newP = malloc(int_node_size);
+            newP->data = 0;
+            newP->next = NULL;
+            prev->next = newP;
+            prev = newP;
+            count = 0;
+        }
+    }
     return head;
 }
 
