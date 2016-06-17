@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(int argc, char **argv){
+int main(int argc, char *argv[]){
     FILE *f_read = fopen(argc[1], "r");
     FILE *f_write = fopen(argc[2], "w");
     char c;
