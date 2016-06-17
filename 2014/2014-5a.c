@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char **argv){
+int main(int argc, char *argv[]){
     FILE *f_read = fopen(argv[1], "r");
     FILE *f_write = fopen(argv[2], "w");
 
