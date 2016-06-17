@@ -2,7 +2,7 @@
 
 void removeEs(FILE *, FILE *);
 
-int main(int argv, char **argc){
+int main(int argc, char *argv[]){
     FILE *f_read = fopen(argc[1], "r");
     FILE *f_write = fopen(argc[2], "w");
     removeEs(f_read, f_write);
