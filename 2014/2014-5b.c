@@ -7,7 +7,7 @@ typedef struct node{
     struct node *next;
 }Node;
 
-int main(int argc, char **argv){
+int main(int argc, char *argv[]){
     //FILL WITH APPROPRIATE METHOD
 }
 
